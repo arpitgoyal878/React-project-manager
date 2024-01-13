@@ -5,6 +5,7 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectsSidebar from "./components/sidebar/ProjectsSidebar";
 import SelectedProject from "./components/SelectedProject";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -112,15 +113,18 @@ function App() {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
   }
   return (
-    <main className="h-screen my-8 flex gap-8">
-      <ProjectsSidebar
-        onStartAddProject={handleStartAddProject}
-        projects={projectsState.projects}
-        onSelectProject={handleSelectProject}
-        selectedProjectId={projectsState.selectedProjectId}
-      />
-      {content}
-    </main>
+    <>
+      <main className="h-screen my-8 flex gap-8">
+        <ProjectsSidebar
+          onStartAddProject={handleStartAddProject}
+          projects={projectsState.projects}
+          onSelectProject={handleSelectProject}
+          selectedProjectId={projectsState.selectedProjectId}
+        />
+        {content}
+      </main>
+      <SpeedInsights/>
+    </>
   );
 }
 
