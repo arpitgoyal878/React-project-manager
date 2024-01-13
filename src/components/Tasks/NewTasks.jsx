@@ -8,7 +8,7 @@ export default function NewTasks({ onAdd }) {
   }
 
   function handleClick() {
-    if (enteredTask() === "") {
+    if (enteredTask === "") {
       return;
     }
     onAdd(enteredTask);
