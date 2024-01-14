@@ -5,7 +5,6 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectsSidebar from "./components/sidebar/ProjectsSidebar";
 import SelectedProject from "./components/SelectedProject";
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -123,7 +122,6 @@ function App() {
         />
         {content}
       </main>
-      <SpeedInsights/>
     </>
   );
 }
